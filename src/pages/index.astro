@@ -13,20 +13,17 @@ const name = "Reniery Lucero Beltran";
 
 		<p id="current-time">Momento actual real:</p>
 
-		<footer>Año: 2023</footer>
-
 		<script>
 			// Client Only
-			const footer = document.querySelector("footer") as HTMLElement;
 			const currentTimeParagraph = document.querySelector(
 				"#current-time",
 			) as HTMLParagraphElement;
-
 			const currentYear: number = new Date().getFullYear();
-			footer.innerText = `Año: ${currentYear}`;
+			currentTimeParagraph.innerText = `Momento actual real: ${new Date().toLocaleTimeString()}`;
 			setInterval(() => {
 				currentTimeParagraph.innerText = `Momento actual real: ${new Date().toLocaleTimeString()}`;
 			}, 1000);
+			console.log(currentYear);
 		</script>
 	</body>
 </MainLayout>

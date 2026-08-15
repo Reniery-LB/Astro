@@ -1,0 +1,361 @@
+---
+const title = "Page | Not Found";
+---
+
+<style>
+    @import url("https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&display=swap");
+
+    .bg-purple {
+        background-color: #25004e;
+    }
+
+    .stars {
+        background-image: url(http://salehriaz.com/404Page/img/stars.svg);
+        height: 100vh;
+        position: relative;
+    }
+
+    .custom-navbar {
+        display: flex;
+        justify-content: space-between;
+        padding: 15px 50px;
+        align-items: center;
+    }
+
+    .brand-logo img {
+        padding: 5px;
+        border-radius: 5px;
+        background-color: rgba(255, 255, 255, 0.9);
+    }
+
+    .navbar-links ul {
+        display: flex;
+    }
+
+    .navbar-links ul li {
+        padding: 5px 10px;
+        list-style: none;
+    }
+
+    .navbar-links ul li a {
+        color: #864eff;
+        text-decoration: none;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 500;
+        font-size: 16px;
+    }
+
+    .btn-request {
+        background: linear-gradient(45deg, #ff6b9d, #ee7752);
+        border: none;
+        color: white;
+        padding: 8px 18px;
+        border-radius: 5px;
+        font-weight: 600;
+    }
+
+    .btn-request:hover {
+        background: linear-gradient(45deg, #ff7fa2, #ff8966);
+    }
+
+    .central-body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 75vh;
+    }
+
+    .image-404 {
+        padding: 10px;
+        margin-bottom: 20px;
+        animation: float 5s ease-in-out infinite;
+    }
+
+    .btn-go-home {
+        padding: 12px 25px;
+        border: none;
+        border-radius: 8px;
+        font-family: "Space Grotesk", sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        cursor: pointer;
+        text-decoration: none;
+        color: white;
+        background: linear-gradient(45deg, #ff6b9d, #ee7752);
+        box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15);
+    }
+
+    .btn-go-home:hover {
+        background: linear-gradient(45deg, #ff7fa2, #ff8966);
+    }
+
+    /* Objects */
+    .object_rocket {
+        position: absolute;
+        left: 5%;
+        top: 70%;
+        animation: rocket-rise 2s ease-in-out infinite;
+    }
+
+    @keyframes rocket-rise {
+        0% {
+            transform: translateY(0px);
+        }
+
+        100% {
+            transform: translateY(-50px);
+        }
+    }
+
+    .object_earth {
+        position: absolute;
+        left: 45%;
+        top: 25%;
+    }
+
+    .object_moon {
+        position: absolute;
+        right: 25%;
+        top: 15%;
+        animation: moon-float 4s ease-in-out infinite;
+    }
+
+    @keyframes moon-float {
+        0%,
+        100% {
+            transform: translateY(0px) scale(0.9);
+        }
+
+        50% {
+            transform: translateY(-20px) scale(1.1);
+        }
+    }
+
+    .object_astronaut {
+        position: absolute;
+        right: 5%;
+        top: 50%;
+        animation: astronaut-float 5s ease-in-out infinite;
+    }
+
+    @keyframes astronaut-float {
+        0%,
+        100% {
+            transform: translateY(0px) rotate(0deg);
+        }
+
+        50% {
+            transform: translateY(-30px) rotate(5deg);
+        }
+    }
+
+    .earth-moon {
+        animation: float 5s ease-in-out infinite;
+    }
+
+    /* Glowing stars */
+    .glowing_stars .star {
+        position: absolute;
+        background-color: white;
+        border-radius: 50%;
+        width: 3px;
+        height: 3px;
+    }
+
+    .star:nth-child(1) {
+        left: 10%;
+        top: 80%;
+        animation: glowing 1s ease-in-out infinite;
+    }
+
+    .star:nth-child(2) {
+        left: 30%;
+        top: 30%;
+        animation: glowing 1s ease-in-out infinite;
+    }
+
+    .star:nth-child(3) {
+        left: 70%;
+        top: 50%;
+        animation: glowing 1s ease-in-out infinite;
+    }
+
+    .star:nth-child(4) {
+        left: 85%;
+        top: 20%;
+        animation: glowing 1s ease-in-out infinite;
+    }
+
+    .star:nth-child(5) {
+        left: 95%;
+        top: 85%;
+        animation: glowing 1s ease-in-out infinite;
+    }
+
+    @keyframes glowing {
+        0%,
+        100% {
+            opacity: 0.4;
+            transform: scale(0.8);
+        }
+
+        50% {
+            opacity: 1;
+            transform: scale(1.2);
+        }
+    }
+
+    @media (max-width: 968px) {
+        .custom-navbar {
+            padding: 15px;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .central-body {
+            height: 60vh;
+        }
+
+        .object_rocket {
+            left: 10%;
+        }
+
+        .object_earth {
+            left: 30%;
+        }
+
+        .object_moon {
+            right: 10%;
+        }
+
+        .object_astronaut {
+            right: 10%;
+        }
+    }
+
+    @media (max-width: 500px) {
+        .navbar-links {
+            display: none;
+        }
+
+        .custom-navbar {
+            flex-direction: column;
+        }
+
+        .central-body {
+            height: 70vh;
+        }
+
+        .image-404 {
+            width: 200px;
+        }
+
+        .object_rocket {
+            left: 20%;
+        }
+
+        .object_earth {
+            left: 20%;
+        }
+
+        .object_moon {
+            right: 5%;
+        }
+
+        .object_astronaut {
+            right: 5%;
+        }
+    }
+</style>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.ico" />
+        <meta name="viewport" content="width=device-width" />
+        <meta name="generator" content={Astro.generator} />
+        <title>{title}</title>
+    </head>
+    <body>
+        <body class="bg-purple">
+            <div class="stars">
+                <div class="custom-navbar">
+                    <div class="brand-logo">
+                        <img
+                            src="http://salehriaz.com/404Page/img/logo.svg"
+                            width="80px"
+                        />
+                    </div>
+                    <div class="navbar-links">
+                        <ul>
+                            <li>
+                                <a href="/" target="_blank">Home</a>
+                            </li>
+                            <li>
+                                <a href="/about" target="_blank">About</a>
+                            </li>
+                            <li>
+                                <a
+                                    href="http://salehriaz.com/404Page/404.html"
+                                    target="_blank">Features</a
+                                >
+                            </li>
+                            <li>
+                                <a
+                                    href="http://salehriaz.com/404Page/404.html"
+                                    class="btn-request"
+                                    target="_blank">Request A Demo</a
+                                >
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="central-body">
+                    <img
+                        class="image-404"
+                        src="http://salehriaz.com/404Page/img/404.svg"
+                        width="300px"
+                    />
+                    <a href="/" class="btn-go-home" target="_blank"
+                        >GO BACK HOME</a
+                    >
+                </div>
+                <div class="objects">
+                    <img
+                        class="object_rocket"
+                        src="http://salehriaz.com/404Page/img/rocket.svg"
+                        width="40px"
+                    />
+                    <div class="earth-moon">
+                        <img
+                            class="object_earth"
+                            src="http://salehriaz.com/404Page/img/earth.svg"
+                            width="100px"
+                        />
+                        <img
+                            class="object_moon"
+                            src="http://salehriaz.com/404Page/img/moon.svg"
+                            width="80px"
+                        />
+                    </div>
+                    <div class="box_astronaut">
+                        <img
+                            class="object_astronaut"
+                            src="http://salehriaz.com/404Page/img/astronaut.svg"
+                            width="140px"
+                        />
+                    </div>
+                </div>
+                <div class="glowing_stars">
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                    <div class="star"></div>
+                </div>
+            </div>
+        </body>
+    </body>
+</html>
