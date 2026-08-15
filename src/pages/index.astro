@@ -1,22 +1,12 @@
 ---
-import Navbar from "../components/navbar.astro";
+import MainLayout from "../layouts/MainLayout.astro";
 
 // Server Only
 const name = "Reniery Lucero Beltran";
-const title = "Home Page";
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
+<MainLayout title="Home">
 	<body>
-		<Navbar />
 		<h1>{name}</h1>
 
 		<p>Momento actual: {new Date().toLocaleTimeString()}</p>
@@ -39,4 +29,4 @@ const title = "Home Page";
 			}, 1000);
 		</script>
 	</body>
-</html>
+</MainLayout>
