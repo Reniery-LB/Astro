@@ -6,7 +6,8 @@ import type { PokemonListResponse } from "../../interfaces/pokemon-list.response
 
 export const getStaticPaths = (async () => {
     const response = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0",
+        "https://pokeapi.co/api/v2/pokemon?limit=20",
+        // "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0",
     );
     const { results } = (await response.json()) as PokemonListResponse;
 
@@ -30,7 +31,7 @@ const audioSrc = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pok
             <h1 class="text-3xl capitalize">{name}</h1>
         </div>
 
-        <PokemonCard name={name} url={url} />
+        <PokemonCard name={name} url={url} isBig />
 
         <audio controls class="mt-5">
             <source src={audioSrc} type="audio/ogg" />
