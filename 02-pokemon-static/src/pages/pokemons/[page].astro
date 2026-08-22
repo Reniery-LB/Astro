@@ -32,8 +32,31 @@ const { page } = Astro.props;
 		}
 	</section>
 	<section class="flex mt-10 gap-2 items-center">
-		<a class="btn" href={page.url.prev}>Anteriores</a>
-		<a class="btn" href={page.url.next}>Siguientes</a>
+		<!-- {
+			page.url.prev && (
+				<a class="btn" href={page.url.prev}>
+					Anteriores
+				</a>
+			)
+		} -->
+		<a
+			class:list={[
+				"btn",
+				{
+					disabled: !page.url.prev,
+				},
+			]}
+			href={page.url.prev}>Anteriores</a
+		>
+		<a
+			class:list={[
+				"btn",
+				{
+					disabled: !page.url.next,
+				},
+			]}
+			href={page.url.next}>Siguientes</a
+		>
 
 		<div class="flex flex-1"></div>
 		<span class="mx-4">Página {page.currentPage}</span>
