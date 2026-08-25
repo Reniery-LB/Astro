@@ -1,12 +1,12 @@
 ---
 import type { GetStaticPaths } from "astro";
-import MainLayout from "../../layouts/MainLayout.astro";
-import PokemonCard from "../../components/pokemons/PokemonCard.astro";
-import type { PokemonListResponse } from "../../interfaces/pokemon-list.response";
+import MainLayout from "@layouts/MainLayout.astro";
+import PokemonCard from "@components/pokemons/PokemonCard.astro";
+import type { PokemonListResponse } from "@interfaces/pokemon-list.response";
 
 export const getStaticPaths = (async () => {
     const response = await fetch(
-        "https://pokeapi.co/api/v2/pokemon?limit=20",
+        "https://pokeapi.co/api/v2/pokemon?limit=151",
         // "https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0",
     );
     const { results } = (await response.json()) as PokemonListResponse;
@@ -24,7 +24,11 @@ const id = url.split("/").at(-2)!;
 const audioSrc = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pokemon/latest/${id}.ogg`;
 ---
 
-<MainLayout title="Pokemon">
+<MainLayout
+    title={`Pokemon - ${id} ${name.toUpperCase()}`}
+    description={`Pokemon #${id} ${name}`}
+    image={`https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`}
+>
     <section class="mt-10 mx-10 flex flex-col justify-center items-center">
         <div>
             <a href="/" class="text-blue-500 hover:underline">Regresar</a>
