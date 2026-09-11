@@ -105,6 +105,13 @@ const audioSrc = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pok
             "[data-full]",
         ) as HTMLElement;
 
+        const isFavorite = favoritePokemons.some((fav) => fav.name === name);
+
+        if (isFavorite) {
+            heartOutline.classList.add("hidden");
+            heartFull.classList.remove("hidden");
+        }
+
         const toggleFavorite = () => {
             const isFavorite = favoritePokemons.some(
                 (fav) => fav.name === name,
