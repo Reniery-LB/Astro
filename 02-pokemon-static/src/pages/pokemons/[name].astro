@@ -63,10 +63,12 @@ const audioSrc = `https://raw.githubusercontent.com/PokeAPI/cries/main/cries/pok
 </MainLayout>
 
 <script>
-    interface FavoritePokemon {
-        name: string;
-        id: number;
-    }
+    // interface FavoritePokemon {
+    //     name: string;
+    //     id: number;
+    // }
+
+    import type { FavoritePokemon } from "@interfaces/favorite-pokemons";
 
     document.addEventListener("astro:before-preparation", () => {
         console.log("astro:before-preparation");
